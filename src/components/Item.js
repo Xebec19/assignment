@@ -19,7 +19,7 @@ function Item(){
 		.catch(err => {
 			setLoad(false);
 		})
-	},[load]);
+	},[]);
 
 	if(load && item){
 		try {
