@@ -11,18 +11,14 @@ function Catalog(){
 		.then(resp => resp.json())
 		.then(response => {
 			setItems(response);
-			console.log(items);
 			setLoad(true);
 		}
 			)
 		.catch(err => {
 			setItems('Loading');
-			console.log(err);
 		})
 	},[load])
-	var elem;
 	if(load === true){
-			console.log(items.data);
 			return(items.data.map(value => {
 				return <p key={value.itemId}>
 				<Link to={`/item/${value.itemId}`}>
@@ -31,10 +27,10 @@ function Catalog(){
 				</p>
 			})
 			) //return ends here
-			}
+			} //if ends here 
 	else{
 		return <h1>Loading</h1>
-	}
+	}  //else ends here
 }
 
 export default Catalog;
