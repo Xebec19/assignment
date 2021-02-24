@@ -18,14 +18,21 @@ function Catalog(){
 			setItems('Loading');
 		})
 	},[load])
+	
 	if(load === true){
-			return(items.data.map(value => {
+			return(
+				<div>
+				<input 
+				type='text'
+				onChange={(e) => console.log(e.target.value)}/>
+				{items.data.map(value => {
 				return <p key={value.itemId}>
 				<Link to={`/item/${value.itemId}`}>
 				{value.item.name}
 				</Link>
 				</p>
-			})
+			})}
+				</div>
 			) //return ends here
 			} //if ends here 
 	else{
